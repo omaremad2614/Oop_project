@@ -6,25 +6,34 @@ public class register_login
 {
     static final String FilePath = "user_login.txt";
 
-    public static void register(String username, String password) throws IOException {
+    public static void register(String ID, String password) throws IOException {
+        ID_check id = ID_check.check(ID);
+        Scanner scanner = new Scanner(System.in);
+        while (id.valid == false){
+            System.out.println(id.text);
+            System.out.println("re-enter your id");
+            ID = scanner.nextLine();
+            id =ID_check.check(ID);
+        }
+        System.out.println("enter password");
+        password = scanner.next();
         PasswordValidation.Result R = PasswordValidation.valid(password);
         while(R.valid == false) {
             System.out.println(R.text);
             System.out.println("re-enter your password!");
-            Scanner scanner = new Scanner(System.in);
             password = scanner.nextLine();
             R = PasswordValidation.valid(password);
         }
             FileWriter fw = new FileWriter(FilePath, true);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(username + ":" + password);
+            bw.write(ID + ":" + password);
             bw.newLine();
             bw.close();
-        System.out.println("Successfully registered " + username);
+        System.out.println("Successfully registered " + ID);
     }
 
 
-    public static Boolean login(String username, String password) throws Exception {
+    public static Boolean login(String ID, String password) throws Exception {
         File file = new File(FilePath);
 
         if(!file.exists()){
@@ -43,9 +52,9 @@ public class register_login
             String user = parts[0];
             String pass = parts[1];
 
-            if(user.equals(username) && pass.equals(password)){
+            if(user.equals(ID) && pass.equals(password)){
                 br.close();
-                System.out.println("Login successful! Welcome, " + username);
+                System.out.println("Login successful! Welcome, " + ID);
                 return true;
             }
         }
@@ -61,19 +70,23 @@ public class register_login
         System.out.println("3.exit");
         System.out.println("Enter your choice");
         int choice = scan.nextInt();
+        scan.nextLine();
 
-        System.out.println("enter username");
-        String username = scan.next();
-        System.out.println("enter password");
-        String  password = scan.next();
 
         if(choice == 1){
-            register(username, password);
+            System.out.println("enter ID");
+            String id = scan.next();
+            register(id,"");
         }
         else if(choice == 2){
-            login(username, password);
+            System.out.println("enter ID");
+            String id = scan.next();
+            scan.nextLine();
+            System.out.println("Enter your password");
+            String password = scan.nextLine();
+            login(id, password);
         }
-        else {
+        else if(choice == 3) {
             System.out.println("bey!!!");
             System.exit(0);
         }
