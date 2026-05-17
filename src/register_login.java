@@ -7,12 +7,19 @@ public class register_login
     static final String FilePath = "user_login.txt";
 
     public static void register(String username, String password) throws IOException {
-
-        FileWriter fw = new FileWriter(FilePath, true);
-        BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(username+ ":" +password);
-        bw.newLine();
-        bw.close();
+        PasswordValidation.Result R = PasswordValidation.valid(password);
+        while(R.valid == false) {
+            System.out.println(R.text);
+            System.out.println("re-enter your password!");
+            Scanner scanner = new Scanner(System.in);
+            password = scanner.nextLine();
+            R = PasswordValidation.valid(password);
+        }
+            FileWriter fw = new FileWriter(FilePath, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(username + ":" + password);
+            bw.newLine();
+            bw.close();
         System.out.println("Successfully registered " + username);
     }
 
