@@ -16,7 +16,7 @@ public class register_login
             id =ID_check.check(ID);
         }
         System.out.println("enter password");
-        password = scanner.next();
+        password = scanner.nextLine();
         PasswordValidation.Result R = PasswordValidation.valid(password);
         while(R.valid == false) {
             System.out.println(R.text);
@@ -24,11 +24,11 @@ public class register_login
             password = scanner.nextLine();
             R = PasswordValidation.valid(password);
         }
-            FileWriter fw = new FileWriter(FilePath, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(ID + ":" + password);
-            bw.newLine();
-            bw.close();
+        FileWriter fw = new FileWriter(FilePath, true);
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(ID + ":" + password);
+        bw.newLine();
+        bw.close();
         System.out.println("Successfully registered " + ID);
     }
 
