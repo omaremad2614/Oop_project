@@ -1,4 +1,8 @@
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 
 public class LoginController {
@@ -7,69 +11,72 @@ public class LoginController {
     @FXML private PasswordField passwordField;
     @FXML private Label messageLabel;
 
+    private void switchScene(String fxmlFile) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+        Stage stage = (Stage) messageLabel.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
     @FXML
     private void handleLogin() throws Exception{
-        String id = idField.getText();
-        String password = passwordField.getText();
+        try{
+            String id = idField.getText();
+            String password = passwordField.getText();
 
-        //validate the id
-        ID_check check = ID_check.check(id);
-        if(!check.valid){
-            messageLabel.setText(check.text);
+            //validate the id
+            ID_check check = ID_check.check(id);
+            if(!check.valid){
+                messageLabel.setText(check.text);
+                messageLabel.setStyle("-fx-text-fill: red;");
+                return;
+            }
+
+            //password check
+            PasswordValidation.Result passcheck = PasswordValidation.valid(password);
+            if(!passcheck.valid){
+                messageLabel.setText(passcheck.text);
+                messageLabel.setStyle("-fx-text-fill: red;");
+                return;
+            }
+
+            //try to Log in
+            Boolean success = register_login.login(id, password);
+            if(success){
+                messageLabel.setText("Login successful! Welcome, " + id);
+                messageLabel.setStyle("-fx-text-fill: green;");
+                switchScene("dashboard.fxml");
+            }
+            else {
+                messageLabel.setText("Invalid ID or password.");
+                messageLabel.setStyle("-fx-text-fill: red;");
+            }
+        } catch (Exception e){
+            messageLabel.setText(e.getMessage());
             messageLabel.setStyle("-fx-text-fill: red;");
-            return;
         }
 
-        //password check
-        PasswordValidation.Result passcheck = PasswordValidation.valid(password);
-        if(!passcheck.valid){
-            messageLabel.setText(passcheck.text);
-            messageLabel.setStyle("-fx-text-fill: red;");
-            return;
-        }
-
-        //try to Log in
-        Boolean success = register_login.login(id, password);
-        if(success){
-            messageLabel.setText("Login successful! Welcome, " + id);
-            messageLabel.setStyle("-fx-text-fill: green;");
-        }
-        else {
-            messageLabel.setText("Invalid ID or password.");
-            messageLabel.setStyle("-fx-text-fill: red;");
-        }
 
     }
 
     @FXML
     private void handleRegister()throws Exception{
-        String id = idField.getText();
-        String password = passwordField.getText();
-
-        //validate the id
-        ID_check check = ID_check.check(id);
-        if(!check.valid){
-            messageLabel.setText(check.text);
+        try{
+            switchScene("register_page.fxml");
+        } catch (Exception e){
+            messageLabel.setText(e.getMessage());
             messageLabel.setStyle("-fx-text-fill: red;");
-            return;
         }
-
-        //password check
-        PasswordValidation.Result passcheck = PasswordValidation.valid(password);
-        if(!passcheck.valid){
-            messageLabel.setText(passcheck.text);
-            messageLabel.setStyle("-fx-text-fill: red;");
-            return;
-        }
-
-        register_login.register(id, password);
-        messageLabel.setText("Registered successfully!");
-        messageLabel.setStyle("-fx-text-fill: green;");
     }
 
     @FXML
     private void handleAdminLogin(){
-        messageLabel.setText("coming soon!!");
+        try{
+            switchScene("AdminLoginPage.fxml");
+        } catch (Exception e){
+            messageLabel.setText(e.getMessage());
+            messageLabel.setStyle("-fx-text-fill: red;");
+        }
     }
 
 }
