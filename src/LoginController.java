@@ -28,7 +28,9 @@ public class LoginController {
             ID_check check = ID_check.check(id);
             if(!check.valid){
                 messageLabel.setText(check.text);
-                messageLabel.setStyle("-fx-text-fill: red;");
+                messageLabel.getStyleClass().removeAll("message-success", "message-error");
+                messageLabel.getStyleClass().add("message-error");
+
                 return;
             }
 
@@ -36,7 +38,9 @@ public class LoginController {
             PasswordValidation.Result passcheck = PasswordValidation.valid(password);
             if(!passcheck.valid){
                 messageLabel.setText(passcheck.text);
-                messageLabel.setStyle("-fx-text-fill: red;");
+                messageLabel.getStyleClass().removeAll("message-success", "message-error");
+                messageLabel.getStyleClass().add("message-error");
+
                 return;
             }
 
@@ -44,12 +48,16 @@ public class LoginController {
             Boolean success = register_login.login(id, password);
             if(success){
                 messageLabel.setText("Login successful! Welcome, " + id);
-                messageLabel.setStyle("-fx-text-fill: green;");
+                messageLabel.getStyleClass().removeAll("message-success", "message-error");
+                messageLabel.getStyleClass().add("message-error");
+
                 switchScene("dashboard.fxml");
             }
             else {
                 messageLabel.setText("Invalid ID or password.");
-                messageLabel.setStyle("-fx-text-fill: red;");
+                messageLabel.getStyleClass().removeAll("message-success", "message-error");
+                messageLabel.getStyleClass().add("message-error");
+
             }
         } catch (Exception e){
             messageLabel.setText(e.getMessage());

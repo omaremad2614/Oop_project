@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="registerController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adminController">
    <children>
-      <TextField layoutX="81.0" layoutY="120.0" promptText="Enter your ID" />
-      <PasswordField layoutX="82.0" layoutY="175.0" promptText="Enter your password" />
-      <Button fx:id="loginButton" layoutX="257.0" layoutY="175.0" mnemonicParsing="false" text="Login" />
-      <Button fx:id="backButton" layoutX="81.0" layoutY="340.0" mnemonicParsing="false" text="Back" />
+      <TextField fx:id="idField" layoutX="81.0" layoutY="120.0" promptText="Enter your ID" />
+      <PasswordField fx:id="passwordField" layoutX="82.0" layoutY="175.0" promptText="Enter your password" />
+      <Button fx:id="loginButton" layoutX="257.0" layoutY="175.0" mnemonicParsing="false" onAction="#handleAdminLogin" text="Login" />
+      <Button fx:id="backButton" layoutX="81.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleBack" text="Back" />
+      <Label fx:id="messageLabel" layoutX="280.0" layoutY="137.0" />
    </children>
 </AnchorPane>
