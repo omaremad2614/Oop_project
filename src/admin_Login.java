@@ -2,19 +2,9 @@ import java.io.*;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class register_login
+public class admin_Login
 {
-    static final String FilePath = "user_login.txt";
-
-    public static void register(String ID, String password) throws IOException {
-        FileWriter fw = new FileWriter(FilePath, true);
-        BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(ID + ":" + password);
-        bw.newLine();
-        bw.close();
-        System.out.println("Successfully registered " + ID);
-    }
-
+    static final String FilePath = "admins.txt";
 
     public static Boolean login(String ID, String password) throws Exception {
         File file = new File(FilePath);

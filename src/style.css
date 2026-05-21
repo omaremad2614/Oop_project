@@ -1,0 +1,195 @@
+/* ================================================
+   LOGIN PAGE - Dark Luxury Theme
+   ================================================ */
+
+/* ROOT BACKGROUND */
+.root {
+    -fx-background-color: #0a0a0f;
+    -fx-font-family: "Segoe UI";
+}
+
+/* ------------------------------------------------
+   MAIN CARD / CONTAINER
+   ------------------------------------------------ */
+.card {
+    -fx-background-color: #13131a;
+    -fx-background-radius: 20;
+    -fx-border-color: #2a2a3d;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(100, 80, 255, 0.25), 40, 0, 0, 10);
+}
+
+/* ------------------------------------------------
+   TITLE LABEL
+   ------------------------------------------------ */
+.title-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI Light";
+}
+
+.subtitle-label {
+    -fx-text-fill: #6b6b8a;
+    -fx-font-size: 13px;
+}
+
+/* ------------------------------------------------
+   INPUT FIELDS
+   ------------------------------------------------ */
+.text-field,
+.password-field {
+    -fx-background-color: #1e1e2e;
+    -fx-background-radius: 12;
+    -fx-border-color: #2e2e45;
+    -fx-border-radius: 12;
+    -fx-border-width: 1.5;
+    -fx-text-fill: #e0e0ff;
+    -fx-prompt-text-fill: #4a4a6a;
+    -fx-font-size: 14px;
+    -fx-padding: 12 16 12 16;
+    -fx-pref-height: 48;
+    -fx-pref-width: 300;
+}
+
+.text-field:focused,
+.password-field:focused {
+    -fx-border-color: #6c63ff;
+    -fx-background-color: #1a1a2e;
+    -fx-effect: dropshadow(gaussian, rgba(108, 99, 255, 0.4), 15, 0, 0, 0);
+}
+
+.text-field:hover,
+.password-field:hover {
+    -fx-border-color: #4a4a7a;
+}
+
+/* ------------------------------------------------
+   BUTTONS
+   ------------------------------------------------ */
+
+/* Login Button - Primary */
+.login-btn {
+    -fx-background-color: linear-gradient(to right, #6c63ff, #a78bfa);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-pref-height: 48;
+    -fx-pref-width: 300;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(108, 99, 255, 0.5), 20, 0, 0, 5);
+}
+
+.login-btn:hover {
+    -fx-background-color: linear-gradient(to right, #7c73ff, #b79bfa);
+    -fx-effect: dropshadow(gaussian, rgba(108, 99, 255, 0.7), 25, 0, 0, 8);
+}
+
+.login-btn:pressed {
+    -fx-background-color: linear-gradient(to right, #5c53ef, #9779ea);
+    -fx-effect: dropshadow(gaussian, rgba(108, 99, 255, 0.3), 10, 0, 0, 2);
+}
+
+/* Register Button - Secondary */
+.register-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6c63ff;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-border-color: #6c63ff;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 12;
+    -fx-pref-height: 48;
+    -fx-pref-width: 300;
+    -fx-cursor: hand;
+}
+
+.register-btn:hover {
+    -fx-background-color: rgba(108, 99, 255, 0.1);
+    -fx-border-color: #a78bfa;
+    -fx-text-fill: #a78bfa;
+}
+
+.register-btn:pressed {
+    -fx-background-color: rgba(108, 99, 255, 0.2);
+}
+
+/* Admin Button - Subtle */
+.admin-btn {
+    -fx-background-color: #1e1e2e;
+    -fx-text-fill: #6b6b8a;
+    -fx-font-size: 12px;
+    -fx-background-radius: 10;
+    -fx-border-color: #2a2a3d;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-pref-height: 36;
+    -fx-pref-width: 140;
+    -fx-cursor: hand;
+}
+
+.admin-btn:hover {
+    -fx-background-color: #252535;
+    -fx-text-fill: #9b9bbf;
+    -fx-border-color: #3a3a55;
+}
+
+/* Back Button */
+.back-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6b6b8a;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 6 12 6 12;
+}
+
+.back-btn:hover {
+    -fx-text-fill: #a78bfa;
+    -fx-background-color: rgba(108, 99, 255, 0.08);
+}
+
+/* ------------------------------------------------
+   LABELS & MESSAGES
+   ------------------------------------------------ */
+.field-label {
+    -fx-text-fill: #9090b0;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.message-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 6 12 6 12;
+}
+
+/* Success message */
+.message-success {
+    -fx-text-fill: #4ade80;
+    -fx-background-color: rgba(74, 222, 128, 0.1);
+    -fx-border-color: rgba(74, 222, 128, 0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+}
+
+/* Error message */
+.message-error {
+    -fx-text-fill: #f87171;
+    -fx-background-color: rgba(248, 113, 113, 0.1);
+    -fx-border-color: rgba(248, 113, 113, 0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+}
+
+/* Divider line label */
+.divider-label {
+    -fx-text-fill: #2e2e45;
+    -fx-font-size: 11px;
+}

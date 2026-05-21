@@ -1,6 +1,6 @@
 public class ID_check {
-    protected static Boolean valid;
-    protected static String text;
+    protected Boolean valid;
+    protected String text;
 
     public ID_check(Boolean valid, String text) {
         this.text = text;

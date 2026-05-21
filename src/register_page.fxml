@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="registerController">
+   <children>
+      <TextField fx:id="idField" layoutX="93.0" layoutY="127.0" promptText="Enter your ID" />
+      <PasswordField fx:id="passwordField" layoutX="93.0" layoutY="187.0" promptText="Enter your password" />
+      <Button fx:id="backButton" layoutX="93.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleBack" text="Back" />
+      <Button fx:id="confirm" layoutX="285.0" layoutY="187.0" mnemonicParsing="false" onAction="#handleConfirm" text="confirm" />
+      <Label fx:id="messageLabel" layoutX="299.0" layoutY="144.0" />
+   </children>
+</AnchorPane>
