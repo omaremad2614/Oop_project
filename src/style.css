@@ -249,70 +249,158 @@
     -fx-border-radius: 6;
 }
 
-/* ------------------------------------------------
-   DASHBOARD — SIDEBAR
-   ------------------------------------------------ */
-.sidebar {
-    -fx-background-color: #1a2744;
+
+/* ================================================
+   DASHBOARD & COURSE REGISTRATION (Matched to FXML)
+   ================================================ */
+
+.dash-root {
+    -fx-background-color: #f7f5ee; /* Ivory off-white canvas */
 }
 
-.sidebar-title {
-    -fx-text-fill: #c9a84c;
-    -fx-font-size: 15px;
+/* ------------------------------------------------
+   TOP NAVBAR
+   ------------------------------------------------ */
+.dash-navbar {
+    -fx-background-color: #0b1a30; /* Midnight blue */
+}
+
+.nav-crest-circle {
+    -fx-fill: #e5c158; /* Shapes use -fx-fill instead of background-color */
+}
+
+.nav-crest-letter {
+    -fx-text-fill: #0b1a30;
+    -fx-font-size: 16px;
     -fx-font-weight: bold;
 }
 
-.nav-btn {
-    -fx-background-color: transparent;
-    -fx-text-fill: #8a9bb5;
-    -fx-font-size: 13px;
-    -fx-alignment: CENTER_LEFT;
-    -fx-pref-width: 200;
-    -fx-pref-height: 42;
-    -fx-background-radius: 8;
-    -fx-border-color: transparent;
-    -fx-cursor: hand;
-    -fx-padding: 0 16 0 16;
-}
-
-.nav-btn:hover {
-    -fx-background-color: rgba(201,168,76,0.1);
-    -fx-text-fill: #c9a84c;
-}
-
-.nav-btn-active {
-    -fx-background-color: rgba(201,168,76,0.15);
-    -fx-text-fill: #c9a84c;
-    -fx-border-color: #c9a84c;
-    -fx-border-width: 0 0 0 3;
-}
-
-.content-area {
-    -fx-background-color: #f4f0e6;
-}
-
-.dashboard-title {
-    -fx-text-fill: #1a2744;
+.nav-uni-name {
+    -fx-text-fill: #e5c158;
     -fx-font-size: 22px;
     -fx-font-weight: bold;
+    -fx-font-family: "Georgia", "Serif", "Segoe UI";
 }
 
-.card-white {
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 12;
-    -fx-border-color: #e5dfc8;
+.nav-user-badge {
+    -fx-border-color: rgba(229, 193, 88, 0.4);
     -fx-border-width: 1;
     -fx-border-radius: 12;
-    -fx-effect: dropshadow(gaussian, rgba(26,39,68,0.08), 12, 0, 0, 3);
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
 }
 
-.card-stat-num {
-    -fx-text-fill: #1a2744;
+.nav-user-badge:hover {
+    -fx-background-color: rgba(229, 193, 88, 0.1);
+    -fx-border-color: #e5c158;
+}
+
+.nav-user-label {
+    -fx-text-fill: #e5c158;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+
+/* ------------------------------------------------
+   HEADER SECTION
+   ------------------------------------------------ */
+.dash-page-title {
+    -fx-text-fill: #0b1a30;
     -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Georgia", "Serif", "Segoe UI";
+}
+
+.dash-page-sub {
+    -fx-text-fill: #7c8ba1;
+    -fx-font-size: 14px;
+}
+
+.dash-divider {
+    -fx-background-color: #e2dfd5; /* Subtle horizontal line */
+}
+
+/* ------------------------------------------------
+   COURSE CARDS (TILE PANE)
+   ------------------------------------------------ */
+.course-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 12, 0, 0, 4);
+}
+
+.course-card-header {
+    -fx-background-color: #172a4d; /* Deep blue header slice */
+    -fx-background-radius: 16 16 0 0; /* Matches top card rounding */
+}
+
+.course-icon-bg {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-border-color: rgba(229, 193, 88, 0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.course-icon-label {
+    -fx-text-fill: #e5c158;
+    -fx-font-size: 18px;
+}
+
+.course-code {
+    -fx-text-fill: #e5c158;
+    -fx-font-size: 12px;
     -fx-font-weight: bold;
 }
 
-.card-stat-label {
-    -fx-text-fill: #6b7280;
-    -fx-font-size: 12px;
+.course-name {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Georgia", "Serif", "Segoe UI";
 }
+
+/* ------------------------------------------------
+   CARD BODY & META DATA
+   ------------------------------------------------ */
+.course-card-body {
+    -fx-background-color: transparent;
+}
+
+.course-desc {
+    -fx-text-fill: #73829c;
+    -fx-font-size: 14px;
+}
+
+.course-meta {
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.course-meta-dot {
+    -fx-text-fill: #a0aec0;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* ------------------------------------------------
+   REGISTER BUTTON
+   ------------------------------------------------ */
+.course-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0b1a30;
+    -fx-border-color: #0b1a30;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 20 8 20;
+    -fx-cursor: hand;
+}
+
+.course-btn:hover {
+    -fx-background-color: #0b1a30;
+    -fx-text-fill: #ffffff;
+}}
