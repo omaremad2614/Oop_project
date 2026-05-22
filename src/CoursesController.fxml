@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0"
+            prefWidth="600.0"
+            stylesheets="@style.css"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="CoursesController">
+
+    <children>
+
+        <VBox spacing="15"
+              alignment="CENTER"
+              AnchorPane.topAnchor="0.0"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0">
+
+            <VBox spacing="15"
+                  alignment="CENTER"
+                  styleClass="card"
+                  maxWidth="350">
+
+                <padding>
+                    <Insets top="30" bottom="30" left="30" right="30"/>
+                </padding>
+
+                <Label text="Courses"
+                       styleClass="title-label"/>
+
+                <Button text="Math 1&#10;MATH101"
+                        prefWidth="250"
+                        prefHeight="60"
+                        styleClass="login-btn"/>
+
+                <Button text="Physics 1&#10;PHYS102"
+                        prefWidth="250"
+                        prefHeight="60"
+                        styleClass="login-btn"/>
+
+                <Button text="Drawing&#10;DRW103"
+                        prefWidth="250"
+                        prefHeight="60"
+                        styleClass="login-btn"/>
+
+                <Button text="Statics&#10;STAT104"
+                        prefWidth="250"
+                        prefHeight="60"
+                        styleClass="login-btn"/>
+
+                <Button text="Art and Design&#10;AD105"
+                        prefWidth="280"
+                        prefHeight="75"
+                        styleClass="login-btn"
+                        textAlignment="CENTER"
+                        wrapText="true"/>
+
+                <Button text="Chemistry&#10;CHEM106"
+                        prefWidth="250"
+                        prefHeight="60"
+                        styleClass="login-btn"/>
+
+                <Button text="English&#10;ENG103"
+                        prefWidth="250"
+                        prefHeight="60"
+                        styleClass="login-btn"/>
+
+            </VBox>
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>
