@@ -7,34 +7,65 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+<AnchorPane prefHeight="551.0" prefWidth="914.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
    <children>
-      <AnchorPane layoutX="5.0" layoutY="-26.0" prefHeight="606.0" prefWidth="600.0" stylesheets="@../../../Downloads/style.css">
+      <HBox layoutX="-100.0" layoutY="20.0" prefHeight="578.4" prefWidth="750.0" stylesheets="@../../../Downloads/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox alignment="CENTER" layoutX="150.0" layoutY="50.0" prefHeight="390.0" prefWidth="300.0" spacing="14" styleClass="card">
+            <VBox alignment="CENTER" prefWidth="340.0" spacing="18" styleClass="left-panel">
                <padding>
-                  <Insets bottom="36" left="30" right="30" top="36" />
+                  <Insets bottom="60" left="40" right="40" top="60" />
                </padding>
                <children>
-                  <Label styleClass="title-label" text="Welcome Back" />
-                  <Label styleClass="subtitle-label" text="Sign in to your account" />
-                  <Label styleClass="field-label" text="ID NUMBER" />
-                  <TextField fx:id="idField" promptText="Enter your 9-digit ID" styleClass="text-field" />
+                  <StackPane alignment="CENTER">
+                     <children>
+                        <StackPane prefHeight="90.0" prefWidth="90.0" styleClass="logo-circle" />
+                        <Label styleClass="logo-letter" text="A" />
+                     </children>
+                  </StackPane>
+                  <Label alignment="CENTER" maxWidth="260" styleClass="university-name" text="Arab Academy" wrapText="true" />
+                  <Label alignment="CENTER" maxWidth="260" styleClass="university-sub" text="for Science, Technology&#10;&amp; Maritime Transport" wrapText="true" />
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Region styleClass="gold-divider" />
+                     </children>
+                  </HBox>
+                  <Label alignment="CENTER" maxWidth="240" styleClass="tagline-label" text="Shaping leaders through knowledge,&#10;integrity, and excellence." wrapText="true" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" spacing="12" styleClass="right-panel" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="60" left="70" right="70" top="60" />
+               </padding>
+               <children>
+                  <Label styleClass="title-label" text="Welcome back" textFill="#18191e" />
+                  <Label styleClass="subtitle-label" text="Sign in to your student portal" />
+                  <Region prefHeight="8.0" />
+                  <Label styleClass="field-label" text="STUDENT ID" />
+                  <TextField fx:id="idField" promptText="e.g. 123456789" styleClass="text-field" />
                   <Label styleClass="field-label" text="PASSWORD" />
                   <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="password-field" />
-                  <Label fx:id="messageLabel" maxWidth="300" prefWidth="238.0" styleClass="message-label" text="" wrapText="true" />
-                  <Button onAction="#handleLogin" styleClass="login-btn" text="Sign In" />
-                  <Button onAction="#handleRegister" styleClass="register-btn" text="Create Account" />
-                  <HBox alignment="CENTER_RIGHT" prefWidth="300">
+                  <Label fx:id="messageLabel1" maxWidth="340" styleClass="message-label" text="" wrapText="true" />
+                  <Label fx:id="messageLabel" />
+                  <Region prefHeight="4.0" />
+                  <Button maxWidth="340" onAction="#handleLogin" styleClass="login-btn" text="SIGN IN" />
+                  <HBox alignment="CENTER" spacing="4">
                      <children>
-                        <Button onAction="#handleAdminLogin" styleClass="admin-btn" text="Admin Login" />
+                        <Label styleClass="subtitle-label" text="New student?" />
+                        <Button onAction="#handleRegister" styleClass="link-btn" text="Create an account" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" maxWidth="340">
+                     <children>
+                        <Button onAction="#handleAdminLogin" styleClass="admin-btn" text="Admin Login →" />
                      </children>
                   </HBox>
                </children>
             </VBox>
          </children>
-      </AnchorPane>
+      </HBox>
    </children>
 </AnchorPane>

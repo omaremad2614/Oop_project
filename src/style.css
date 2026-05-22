@@ -1,195 +1,318 @@
 /* ================================================
-   LOGIN PAGE - Dark Luxury Theme
+   AASTMT Course Registration System
+   Navy Blue & Gold Theme
    ================================================ */
 
-/* ROOT BACKGROUND */
+/* ROOT */
 .root {
-    -fx-background-color: #0a0a0f;
     -fx-font-family: "Segoe UI";
 }
 
 /* ------------------------------------------------
-   MAIN CARD / CONTAINER
+   PANEL BACKGROUNDS
    ------------------------------------------------ */
-.card {
-    -fx-background-color: #13131a;
-    -fx-background-radius: 20;
-    -fx-border-color: #2a2a3d;
-    -fx-border-width: 1.5;
-    -fx-border-radius: 20;
-    -fx-effect: dropshadow(gaussian, rgba(100, 80, 255, 0.25), 40, 0, 0, 10);
+.left-panel {
+    -fx-background-color: #1a2744;
+}
+
+.right-panel {
+    -fx-background-color: #f4f0e6;
 }
 
 /* ------------------------------------------------
-   TITLE LABEL
+   LOGO AREA (LEFT PANEL)
+   ------------------------------------------------ */
+.logo-circle {
+    -fx-background-color: #c9a84c;
+    -fx-background-radius: 50;
+    -fx-min-width:  90;
+    -fx-min-height: 90;
+    -fx-max-width:  90;
+    -fx-max-height: 90;
+    -fx-effect: dropshadow(gaussian, rgba(201,168,76,0.45), 20, 0, 0, 4);
+}
+
+.logo-letter {
+    -fx-text-fill: #1a2744;
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI";
+}
+
+.university-name {
+    -fx-text-fill: #c9a84c;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-alignment: CENTER;
+}
+
+.university-sub {
+    -fx-text-fill: #8a9bb5;
+    -fx-font-size: 13px;
+    -fx-text-alignment: center;
+    -fx-alignment: CENTER;
+}
+
+.gold-divider {
+    -fx-background-color: #c9a84c;
+    -fx-pref-height: 2;
+    -fx-pref-width: 60;
+    -fx-max-width: 60;
+}
+
+.tagline-label {
+    -fx-text-fill: #7a8faa;
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+    -fx-text-alignment: center;
+    -fx-alignment: CENTER;
+}
+
+/* ------------------------------------------------
+   RIGHT PANEL — TITLES
    ------------------------------------------------ */
 .title-label {
-    -fx-text-fill: #ffffff;
+    -fx-text-fill: #1a2744;
     -fx-font-size: 28px;
     -fx-font-weight: bold;
-    -fx-font-family: "Segoe UI Light";
+    -fx-font-family: "Segoe UI";
 }
 
 .subtitle-label {
-    -fx-text-fill: #6b6b8a;
+    -fx-text-fill: #6b7280;
     -fx-font-size: 13px;
 }
 
 /* ------------------------------------------------
    INPUT FIELDS
    ------------------------------------------------ */
+.field-label {
+    -fx-text-fill: #374151;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 0.5px;
+}
+
 .text-field,
 .password-field {
-    -fx-background-color: #1e1e2e;
-    -fx-background-radius: 12;
-    -fx-border-color: #2e2e45;
-    -fx-border-radius: 12;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8;
+    -fx-border-color: #c9a84c;
+    -fx-border-radius: 8;
     -fx-border-width: 1.5;
-    -fx-text-fill: #e0e0ff;
-    -fx-prompt-text-fill: #4a4a6a;
+    -fx-text-fill: #1a2744;
+    -fx-prompt-text-fill: #b0b8c4;
     -fx-font-size: 14px;
     -fx-padding: 12 16 12 16;
     -fx-pref-height: 48;
-    -fx-pref-width: 300;
+    -fx-pref-width: 340;
 }
 
 .text-field:focused,
 .password-field:focused {
-    -fx-border-color: #6c63ff;
-    -fx-background-color: #1a1a2e;
-    -fx-effect: dropshadow(gaussian, rgba(108, 99, 255, 0.4), 15, 0, 0, 0);
+    -fx-border-color: #1a2744;
+    -fx-background-color: #fdfcf9;
+    -fx-effect: dropshadow(gaussian, rgba(26,39,68,0.18), 10, 0, 0, 2);
 }
 
 .text-field:hover,
 .password-field:hover {
-    -fx-border-color: #4a4a7a;
+    -fx-border-color: #a07c2c;
 }
 
 /* ------------------------------------------------
    BUTTONS
    ------------------------------------------------ */
 
-/* Login Button - Primary */
+/* Primary — Sign In / Confirm */
 .login-btn {
-    -fx-background-color: linear-gradient(to right, #6c63ff, #a78bfa);
+    -fx-background-color: #1a2744;
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-background-radius: 12;
-    -fx-border-radius: 12;
+    -fx-letter-spacing: 1px;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
     -fx-pref-height: 48;
-    -fx-pref-width: 300;
+    -fx-pref-width: 340;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(108, 99, 255, 0.5), 20, 0, 0, 5);
+    -fx-effect: dropshadow(gaussian, rgba(26,39,68,0.35), 12, 0, 0, 4);
 }
 
 .login-btn:hover {
-    -fx-background-color: linear-gradient(to right, #7c73ff, #b79bfa);
-    -fx-effect: dropshadow(gaussian, rgba(108, 99, 255, 0.7), 25, 0, 0, 8);
+    -fx-background-color: #243561;
+    -fx-effect: dropshadow(gaussian, rgba(26,39,68,0.55), 16, 0, 0, 6);
 }
 
 .login-btn:pressed {
-    -fx-background-color: linear-gradient(to right, #5c53ef, #9779ea);
-    -fx-effect: dropshadow(gaussian, rgba(108, 99, 255, 0.3), 10, 0, 0, 2);
+    -fx-background-color: #111c35;
+    -fx-effect: dropshadow(gaussian, rgba(26,39,68,0.2), 6, 0, 0, 2);
 }
 
-/* Register Button - Secondary */
+/* Secondary — Register / Back outlined */
 .register-btn {
     -fx-background-color: transparent;
-    -fx-text-fill: #6c63ff;
+    -fx-text-fill: #1a2744;
     -fx-font-size: 13px;
     -fx-font-weight: bold;
-    -fx-background-radius: 12;
-    -fx-border-color: #6c63ff;
+    -fx-background-radius: 8;
+    -fx-border-color: #1a2744;
     -fx-border-width: 1.5;
-    -fx-border-radius: 12;
+    -fx-border-radius: 8;
     -fx-pref-height: 48;
-    -fx-pref-width: 300;
+    -fx-pref-width: 340;
     -fx-cursor: hand;
 }
 
 .register-btn:hover {
-    -fx-background-color: rgba(108, 99, 255, 0.1);
-    -fx-border-color: #a78bfa;
-    -fx-text-fill: #a78bfa;
+    -fx-background-color: rgba(26,39,68,0.07);
+    -fx-border-color: #c9a84c;
+    -fx-text-fill: #c9a84c;
 }
 
 .register-btn:pressed {
-    -fx-background-color: rgba(108, 99, 255, 0.2);
+    -fx-background-color: rgba(26,39,68,0.14);
 }
 
-/* Admin Button - Subtle */
+/* Admin — subtle ghost link */
 .admin-btn {
-    -fx-background-color: #1e1e2e;
-    -fx-text-fill: #6b6b8a;
+    -fx-background-color: transparent;
+    -fx-text-fill: #9ca3af;
     -fx-font-size: 12px;
-    -fx-background-radius: 10;
-    -fx-border-color: #2a2a3d;
-    -fx-border-width: 1;
-    -fx-border-radius: 10;
-    -fx-pref-height: 36;
-    -fx-pref-width: 140;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-border-color: transparent;
     -fx-cursor: hand;
+    -fx-padding: 4 8 4 8;
 }
 
 .admin-btn:hover {
-    -fx-background-color: #252535;
-    -fx-text-fill: #9b9bbf;
-    -fx-border-color: #3a3a55;
+    -fx-text-fill: #c9a84c;
+    -fx-background-color: rgba(201,168,76,0.08);
 }
 
-/* Back Button */
+/* Back — text button */
 .back-btn {
     -fx-background-color: transparent;
-    -fx-text-fill: #6b6b8a;
+    -fx-text-fill: #6b7280;
     -fx-font-size: 13px;
-    -fx-background-radius: 8;
+    -fx-background-radius: 6;
     -fx-border-color: transparent;
     -fx-cursor: hand;
     -fx-padding: 6 12 6 12;
 }
 
 .back-btn:hover {
-    -fx-text-fill: #a78bfa;
-    -fx-background-color: rgba(108, 99, 255, 0.08);
+    -fx-text-fill: #1a2744;
+    -fx-background-color: rgba(26,39,68,0.06);
+}
+
+/* Inline link (e.g., "Create an account") */
+.link-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #c9a84c;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.link-btn:hover {
+    -fx-text-fill: #a07c2c;
 }
 
 /* ------------------------------------------------
-   LABELS & MESSAGES
+   MESSAGES
    ------------------------------------------------ */
-.field-label {
-    -fx-text-fill: #9090b0;
-    -fx-font-size: 12px;
-    -fx-font-weight: bold;
-}
-
 .message-label {
     -fx-font-size: 12px;
     -fx-font-weight: bold;
-    -fx-background-radius: 8;
+    -fx-background-radius: 6;
     -fx-padding: 6 12 6 12;
 }
 
-/* Success message */
 .message-success {
-    -fx-text-fill: #4ade80;
-    -fx-background-color: rgba(74, 222, 128, 0.1);
-    -fx-border-color: rgba(74, 222, 128, 0.3);
+    -fx-text-fill: #15803d;
+    -fx-background-color: rgba(21,128,61,0.1);
+    -fx-border-color: rgba(21,128,61,0.3);
     -fx-border-width: 1;
-    -fx-border-radius: 8;
+    -fx-border-radius: 6;
 }
 
-/* Error message */
 .message-error {
-    -fx-text-fill: #f87171;
-    -fx-background-color: rgba(248, 113, 113, 0.1);
-    -fx-border-color: rgba(248, 113, 113, 0.3);
+    -fx-text-fill: #dc2626;
+    -fx-background-color: rgba(220,38,38,0.1);
+    -fx-border-color: rgba(220,38,38,0.3);
     -fx-border-width: 1;
-    -fx-border-radius: 8;
+    -fx-border-radius: 6;
 }
 
-/* Divider line label */
-.divider-label {
-    -fx-text-fill: #2e2e45;
-    -fx-font-size: 11px;
+/* ------------------------------------------------
+   DASHBOARD — SIDEBAR
+   ------------------------------------------------ */
+.sidebar {
+    -fx-background-color: #1a2744;
+}
+
+.sidebar-title {
+    -fx-text-fill: #c9a84c;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8a9bb5;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-pref-width: 200;
+    -fx-pref-height: 42;
+    -fx-background-radius: 8;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 0 16 0 16;
+}
+
+.nav-btn:hover {
+    -fx-background-color: rgba(201,168,76,0.1);
+    -fx-text-fill: #c9a84c;
+}
+
+.nav-btn-active {
+    -fx-background-color: rgba(201,168,76,0.15);
+    -fx-text-fill: #c9a84c;
+    -fx-border-color: #c9a84c;
+    -fx-border-width: 0 0 0 3;
+}
+
+.content-area {
+    -fx-background-color: #f4f0e6;
+}
+
+.dashboard-title {
+    -fx-text-fill: #1a2744;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.card-white {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12;
+    -fx-border-color: #e5dfc8;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(26,39,68,0.08), 12, 0, 0, 3);
+}
+
+.card-stat-num {
+    -fx-text-fill: #1a2744;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+
+.card-stat-label {
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 12px;
 }

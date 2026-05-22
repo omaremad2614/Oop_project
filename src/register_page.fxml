@@ -1,17 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="registerController">
+<AnchorPane prefHeight="528.0" prefWidth="928.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="registerController">
    <children>
-      <TextField fx:id="idField" layoutX="93.0" layoutY="127.0" promptText="Enter your ID" />
-      <PasswordField fx:id="passwordField" layoutX="93.0" layoutY="187.0" promptText="Enter your password" />
-      <Button fx:id="backButton" layoutX="93.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleBack" text="Back" />
-      <Button fx:id="confirm" layoutX="285.0" layoutY="187.0" mnemonicParsing="false" onAction="#handleConfirm" text="confirm" />
-      <Label fx:id="messageLabel" layoutX="299.0" layoutY="144.0" />
+      <HBox layoutX="10.0" layoutY="10.0" prefHeight="541.2" prefWidth="790.8" stylesheets="@../../../Downloads/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" prefWidth="340.0" spacing="18" styleClass="left-panel">
+               <padding>
+                  <Insets bottom="60" left="40" right="40" top="60" />
+               </padding>
+               <children>
+                  <StackPane alignment="CENTER">
+                     <children>
+                        <StackPane prefHeight="90.0" prefWidth="90.0" styleClass="logo-circle" />
+                        <Label styleClass="logo-letter" text="A" />
+                     </children>
+                  </StackPane>
+                  <Label alignment="CENTER" maxWidth="260" styleClass="university-name" text="Arab Academy" wrapText="true" />
+                  <Label alignment="CENTER" maxWidth="260" styleClass="university-sub" text="for Science, Technology&#10;&amp; Maritime Transport" wrapText="true" />
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Region styleClass="gold-divider" />
+                     </children>
+                  </HBox>
+                  <Label alignment="CENTER" maxWidth="240" styleClass="tagline-label" text="Shaping leaders through knowledge,&#10;integrity, and excellence." wrapText="true" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" spacing="12" styleClass="right-panel" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="60" left="70" right="70" top="60" />
+               </padding>
+               <children>
+                  <Label styleClass="title-label" text="Create Account" />
+                  <Label styleClass="subtitle-label" text="Register for the student portal" />
+                  <Region prefHeight="8.0" />
+                  <Label styleClass="field-label" text="STUDENT ID" />
+                  <TextField fx:id="idField" promptText="Enter your 9-digit ID" styleClass="text-field" />
+                  <Label styleClass="field-label" text="PASSWORD" />
+                  <PasswordField fx:id="passwordField" promptText="Create a strong password" styleClass="password-field" />
+                  <Label fx:id="messageLabel" maxWidth="340" styleClass="message-label" text="" wrapText="true" />
+                  <Region prefHeight="4.0" />
+                  <Button fx:id="confirm" maxWidth="340" onAction="#handleConfirm" styleClass="login-btn" text="CREATE ACCOUNT" />
+                  <HBox alignment="CENTER" spacing="4">
+                     <children>
+                        <Label styleClass="subtitle-label" text="Already have an account?" />
+                        <Button fx:id="backButton" onAction="#handleBack" styleClass="link-btn" text="Sign in" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

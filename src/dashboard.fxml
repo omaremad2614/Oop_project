@@ -1,14 +1,264 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="551.0" prefWidth="914.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+   <children>
+      <VBox styleClass="dash-root" stylesheets="@../../../Downloads/style.css">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="64" styleClass="dash-navbar">
+               <padding>
+                  <Insets bottom="0" left="32" right="32" top="0" />
+               </padding>
+               <children>
+                  <StackPane alignment="CENTER">
+                     <children>
+                        <Circle radius="18" styleClass="nav-crest-circle" />
+                        <Label styleClass="nav-crest-letter" text="M" />
+                     </children>
+                     <HBox.margin>
+                        <Insets right="12" />
+                     </HBox.margin>
+                  </StackPane>
+                  <Label styleClass="nav-uni-name" text="Meridian University" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <HBox alignment="CENTER" spacing="10" styleClass="nav-user-badge">
+                     <padding>
+                        <Insets bottom="8" left="16" right="16" top="8" />
+                     </padding>
+                     <children>
+                        <Label styleClass="nav-user-label" text="Student Portal" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <VBox styleClass="dash-header-section">
+               <padding>
+                  <Insets bottom="32" left="48" right="48" top="36" />
+               </padding>
+               <children>
+                  <Label styleClass="dash-page-title" text="Course Registration" />
+                  <Label styleClass="dash-page-sub" text="Select a course below to view details and register">
+                     <VBox.margin>
+                        <Insets top="6" />
+                     </VBox.margin>
+                  </Label>
+                  <Region maxWidth="Infinity" prefHeight="1" styleClass="dash-divider">
+                     <VBox.margin>
+                        <Insets top="24" />
+                     </VBox.margin>
+                  </Region>
+               </children>
+            </VBox>
+            <TilePane hgap="20" prefColumns="2" tileAlignment="CENTER" vgap="20" VBox.vgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="48" left="48" right="48" top="0" />
+               </padding>
+               <children>
+                  <VBox spacing="0" styleClass="course-card">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="course-card-header">
+                           <padding>
+                              <Insets bottom="18" left="20" right="20" top="18" />
+                           </padding>
+                           <children>
+                              <StackPane prefHeight="40" prefWidth="40" styleClass="course-icon-bg">
+                                 <children>
+                                    <Label styleClass="course-icon-label" text="∑" />
+                                 </children>
+                              </StackPane>
+                              <VBox spacing="2">
+                                 <children>
+                                    <Label styleClass="course-code" text="MATH 101" />
+                                    <Label styleClass="course-name" text="Mathematics I" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <VBox styleClass="course-card-body" VBox.vgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="14" left="20" right="20" top="14" />
+                           </padding>
+                           <children>
+                              <Label styleClass="course-desc" text="Calculus, limits, derivatives and integrals for engineering students." wrapText="true" />
+                              <HBox alignment="CENTER_LEFT" spacing="8">
+                                 <VBox.margin>
+                                    <Insets top="14" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label styleClass="course-meta" text="3 Credit Hours" />
+                                    <Label styleClass="course-meta-dot" text="·" />
+                                    <Label styleClass="course-meta" text="Mon / Wed / Fri" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER_RIGHT">
+                           <padding>
+                              <Insets bottom="16" left="20" right="20" top="10" />
+                           </padding>
+                           <children>
+                              <Button fx:id="mathBtn" styleClass="course-btn" text="Register →" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox spacing="0" styleClass="course-card">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="course-card-header">
+                           <padding>
+                              <Insets bottom="18" left="20" right="20" top="18" />
+                           </padding>
+                           <children>
+                              <StackPane prefHeight="40" prefWidth="40" styleClass="course-icon-bg">
+                                 <children>
+                                    <Label styleClass="course-icon-label" text="⚛" />
+                                 </children>
+                              </StackPane>
+                              <VBox spacing="2">
+                                 <children>
+                                    <Label styleClass="course-code" text="PHYS 102" />
+                                    <Label styleClass="course-name" text="Physics II" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <VBox styleClass="course-card-body" VBox.vgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="14" left="20" right="20" top="14" />
+                           </padding>
+                           <children>
+                              <Label styleClass="course-desc" text="Electricity, magnetism, waves and modern physics fundamentals." wrapText="true" />
+                              <HBox alignment="CENTER_LEFT" spacing="8">
+                                 <VBox.margin>
+                                    <Insets top="14" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label styleClass="course-meta" text="3 Credit Hours" />
+                                    <Label styleClass="course-meta-dot" text="·" />
+                                    <Label styleClass="course-meta" text="Tue / Thu" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER_RIGHT">
+                           <padding>
+                              <Insets bottom="16" left="20" right="20" top="10" />
+                           </padding>
+                           <children>
+                              <Button fx:id="physicsBtn" styleClass="course-btn" text="Register →" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox spacing="0" styleClass="course-card">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="course-card-header">
+                           <padding>
+                              <Insets bottom="18" left="20" right="20" top="18" />
+                           </padding>
+                           <children>
+                              <StackPane prefHeight="40" prefWidth="40" styleClass="course-icon-bg">
+                                 <children>
+                                    <Label styleClass="course-icon-label" text="⊞" />
+                                 </children>
+                              </StackPane>
+                              <VBox spacing="2">
+                                 <children>
+                                    <Label styleClass="course-code" text="MECH 103" />
+                                    <Label styleClass="course-name" text="Statics" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <VBox styleClass="course-card-body" VBox.vgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="14" left="20" right="20" top="14" />
+                           </padding>
+                           <children>
+                              <Label styleClass="course-desc" text="Equilibrium of structures, free body diagrams, trusses and frames." wrapText="true" />
+                              <HBox alignment="CENTER_LEFT" spacing="8">
+                                 <VBox.margin>
+                                    <Insets top="14" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label styleClass="course-meta" text="3 Credit Hours" />
+                                    <Label styleClass="course-meta-dot" text="·" />
+                                    <Label styleClass="course-meta" text="Mon / Wed" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER_RIGHT">
+                           <padding>
+                              <Insets bottom="16" left="20" right="20" top="10" />
+                           </padding>
+                           <children>
+                              <Button fx:id="staticsBtn" styleClass="course-btn" text="Register →" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox spacing="0" styleClass="course-card">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="course-card-header">
+                           <padding>
+                              <Insets bottom="18" left="20" right="20" top="18" />
+                           </padding>
+                           <children>
+                              <StackPane prefHeight="40" prefWidth="40" styleClass="course-icon-bg">
+                                 <children>
+                                    <Label styleClass="course-icon-label" text="✎" />
+                                 </children>
+                              </StackPane>
+                              <VBox spacing="2">
+                                 <children>
+                                    <Label styleClass="course-code" text="ENGR 104" />
+                                    <Label styleClass="course-name" text="Engineering Drawing" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <VBox styleClass="course-card-body" VBox.vgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="14" left="20" right="20" top="14" />
+                           </padding>
+                           <children>
+                              <Label styleClass="course-desc" text="Technical drawing, orthographic projection, and CAD fundamentals." wrapText="true" />
+                              <HBox alignment="CENTER_LEFT" spacing="8">
+                                 <VBox.margin>
+                                    <Insets top="14" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label styleClass="course-meta" text="2 Credit Hours" />
+                                    <Label styleClass="course-meta-dot" text="·" />
+                                    <Label styleClass="course-meta" text="Sun / Tue" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER_RIGHT">
+                           <padding>
+                              <Insets bottom="16" left="20" right="20" top="10" />
+                           </padding>
+                           <children>
+                              <Button fx:id="drawingBtn" styleClass="course-btn" text="Register →" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </TilePane>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
