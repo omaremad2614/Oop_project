@@ -27,7 +27,7 @@ public class LoginController {
             //validate the id
             ID_check check = ID_check.check(id);
             if(!check.valid){
-                messageLabel.setText(check.text);
+                messageLabel.setText("Invalid ID or password.");
                 messageLabel.getStyleClass().removeAll("message-success", "message-error");
                 messageLabel.getStyleClass().add("message-error");
 
@@ -37,7 +37,7 @@ public class LoginController {
             //password check
             PasswordValidation.Result passcheck = PasswordValidation.valid(password);
             if(!passcheck.valid){
-                messageLabel.setText(passcheck.text);
+                messageLabel.setText("Invalid ID or password.");
                 messageLabel.getStyleClass().removeAll("message-success", "message-error");
                 messageLabel.getStyleClass().add("message-error");
 

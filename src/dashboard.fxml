@@ -3,7 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
@@ -11,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<VBox prefHeight="700.0" prefWidth="1000.0" styleClass="dashboard-container" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="700.0" prefWidth="1000.0" styleClass="dashboard-container" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox styleClass="dash-root" stylesheets="@../../../Downloads/style.css">
          <children>
@@ -29,7 +28,7 @@
                         <Insets right="12" />
                      </HBox.margin>
                   </StackPane>
-                  <Label styleClass="nav-uni-name" text="Meridian University" />
+                  <Label styleClass="nav-uni-name" text="AASTMT" />
                   <Region HBox.hgrow="ALWAYS" />
                   <HBox alignment="CENTER" spacing="10" styleClass="nav-user-badge">
                      <padding>
