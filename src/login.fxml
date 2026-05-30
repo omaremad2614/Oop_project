@@ -48,8 +48,7 @@
                   <TextField fx:id="idField" promptText="e.g. 123456789" styleClass="text-field" />
                   <Label styleClass="field-label" text="PASSWORD" />
                   <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="password-field" />
-                  <Label fx:id="messageLabel1" maxWidth="340" styleClass="message-label" text="" wrapText="true" />
-                  <Label fx:id="messageLabel" />
+                  <Label fx:id="messageLabel" maxWidth="340" styleClass="message-label" text="" wrapText="true" />
                   <Region prefHeight="4.0" />
                   <Button maxWidth="340" onAction="#handleLogin" styleClass="login-btn" text="SIGN IN" />
                   <HBox alignment="CENTER" spacing="4">

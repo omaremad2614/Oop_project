@@ -44,10 +44,42 @@
                   <Label styleClass="title-label" text="Create Account" />
                   <Label styleClass="subtitle-label" text="Register for the student portal" />
                   <Region prefHeight="8.0" />
+
+                  <Label styleClass="field-label" text="FULL NAME" />
+                  <TextField fx:id="nameField" promptText="First Middle Last" styleClass="text-field" maxWidth="340" />
+
                   <Label styleClass="field-label" text="STUDENT ID" />
-                  <TextField fx:id="idField" promptText="Enter your 9-digit ID" styleClass="text-field" />
+                  <TextField fx:id="idField" promptText="Enter your 9-digit ID" styleClass="text-field" maxWidth="340" />
+
                   <Label styleClass="field-label" text="PASSWORD" />
-                  <PasswordField fx:id="passwordField" promptText="Create a strong password" styleClass="password-field" />
+                  <StackPane alignment="CENTER_RIGHT" maxWidth="340">
+                     <children>
+                        <TextField fx:id="passwordTextField" promptText="Create a strong password" styleClass="text-field" visible="false" managed="false" />
+                        <PasswordField fx:id="passwordField" promptText="Create a strong password" styleClass="password-field" />
+                        <Button fx:id="togglePasswordBtn" onAction="#togglePasswordVisibility" text="👁" style="-fx-background-color: transparent; -fx-cursor: hand;" />
+                     </children>
+                  </StackPane>
+
+                  <Label styleClass="field-label" text="CONFIRM PASSWORD" />
+                  <StackPane alignment="CENTER_RIGHT" maxWidth="340">
+                     <children>
+                        <TextField fx:id="confirmPasswordTextField" promptText="Re-enter password" styleClass="text-field" visible="false" managed="false" />
+                        <PasswordField fx:id="confirmPasswordField" promptText="Re-enter password" styleClass="password-field" />
+                        <Button fx:id="toggleConfirmBtn" onAction="#toggleConfirmVisibility" text="👁" style="-fx-background-color: transparent; -fx-cursor: hand;" />
+                     </children>
+                  </StackPane>
+
+                  <VBox fx:id="passwordRulesBox" spacing="4" maxWidth="340">
+                     <padding><Insets top="4" bottom="8"/></padding>
+                     <children>
+                        <Label fx:id="ruleLength" text="• At least 8 characters" style="-fx-text-fill: gray;" />
+                        <Label fx:id="ruleNumber" text="• At least 1 number" style="-fx-text-fill: gray;" />
+                        <Label fx:id="ruleUpper" text="• At least 1 uppercase letter" style="-fx-text-fill: gray;" />
+                        <Label fx:id="ruleLower" text="• At least 1 lowercase letter" style="-fx-text-fill: gray;" />
+                        <Label fx:id="ruleSpace" text="• No spaces allowed" style="-fx-text-fill: gray;" />
+                     </children>
+                  </VBox>
+
                   <Label fx:id="messageLabel" maxWidth="340" styleClass="message-label" text="" wrapText="true" />
                   <Region prefHeight="4.0" />
                   <Button fx:id="confirm" maxWidth="340" onAction="#handleConfirm" styleClass="login-btn" text="CREATE ACCOUNT" />

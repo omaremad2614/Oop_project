@@ -5,57 +5,39 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="524.0" prefWidth="420.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adminController">
+<StackPane prefHeight="700.0" prefWidth="1000.0" styleClass="admin-root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adminController">
    <children>
-      <VBox alignment="CENTER" prefWidth="340.0" spacing="18" styleClass="left-panel">
-         <padding>
-            <Insets bottom="60" left="40" right="40" top="60" />
-         </padding>
+
+      <VBox alignment="CENTER" maxWidth="440.0" maxHeight="520.0" spacing="18.0" styleClass="admin-card">
          <children>
-            <StackPane alignment="CENTER">
-               <children>
-                  <StackPane prefHeight="90.0" prefWidth="90.0" styleClass="logo-circle" />
-                  <Label styleClass="logo-letter" text="A" />
-               </children>
-            </StackPane>
-            <Label alignment="CENTER" maxWidth="260" styleClass="university-name" text="Arab Academy" wrapText="true" />
-            <Label alignment="CENTER" maxWidth="260" styleClass="university-sub" text="for Science, Technology&#10;&amp; Maritime Transport" wrapText="true" />
-            <HBox alignment="CENTER">
-               <children>
-                  <Region styleClass="gold-divider" />
-               </children>
-            </HBox>
-            <Label alignment="CENTER" maxWidth="240" styleClass="tagline-label" text="Administration Portal&#10;Authorized Personnel Only" wrapText="true" />
-         </children>
-      </VBox>
-      <VBox alignment="CENTER" spacing="12" styleClass="right-panel" HBox.hgrow="ALWAYS">
-         <padding>
-            <Insets bottom="60" left="70" right="70" top="60" />
-         </padding>
-         <children>
-            <Label styleClass="title-label" text="Admin Access" />
-            <Label styleClass="subtitle-label" text="Sign in to the administration panel" />
+
+            <Label styleClass="admin-title" text="Admin Access" />
+            <Label styleClass="admin-subtitle" text="Sign in to the administration panel" />
+            <Region prefHeight="12.0" />
+
+            <VBox spacing="6.0" alignment="CENTER_LEFT">
+               <Label styleClass="admin-field-label" text="ADMIN ID" />
+               <TextField fx:id="idField" promptText="Enter your admin ID" styleClass="admin-text-field" />
+            </VBox>
+
+            <VBox spacing="6.0" alignment="CENTER_LEFT">
+               <Label styleClass="admin-field-label" text="PASSWORD" />
+               <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="admin-text-field" />
+            </VBox>
+
+            <Label fx:id="messageLabel" styleClass="message-label" text="" wrapText="true" />
             <Region prefHeight="8.0" />
-            <Label styleClass="field-label" text="ADMIN ID" />
-            <TextField fx:id="idField" promptText="Enter your admin ID" styleClass="text-field" />
-            <Label styleClass="field-label" text="PASSWORD" />
-            <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="password-field" />
-            <Label fx:id="messageLabel" maxWidth="340" styleClass="message-label" text="" wrapText="true" />
-            <Region prefHeight="4.0" />
-            <Button maxWidth="340" onAction="#handleAdminLogin" styleClass="login-btn" text="SIGN IN" />
-            <HBox alignment="CENTER" spacing="4">
-               <children>
-                  <Label styleClass="subtitle-label" text="Not an admin?" />
-                  <Button onAction="#handleBack" styleClass="link-btn" text="Go back to student login" />
-               </children>
-            </HBox>
+
+            <Button maxWidth="Infinity" onAction="#handleAdminLogin" styleClass="admin-login-btn" text="SIGN IN" />
+            <Region prefHeight="8.0" />
+            <Button onAction="#handleBack" styleClass="admin-link-btn" text="← Go back to student login" />
+
          </children>
       </VBox>
+
    </children>
-</AnchorPane>
+</StackPane>

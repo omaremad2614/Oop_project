@@ -175,21 +175,94 @@
     -fx-background-color: rgba(26,39,68,0.14);
 }
 
-/* Admin — subtle ghost link */
-.admin-btn {
-    -fx-background-color: transparent;
-    -fx-text-fill: #9ca3af;
-    -fx-font-size: 12px;
-    -fx-font-weight: bold;
-    -fx-background-radius: 6;
-    -fx-border-color: transparent;
-    -fx-cursor: hand;
-    -fx-padding: 4 8 4 8;
+/* ==========================================================================
+   ADMIN PANEL: EXECUTIVE BOARDROOM AESTHETIC
+   ========================================================================== */
+
+/* The full-screen deep navy background */
+.admin-root {
+    -fx-background-color: #0B132B; 
 }
 
-.admin-btn:hover {
-    -fx-text-fill: #c9a84c;
-    -fx-background-color: rgba(201,168,76,0.08);
+/* The centered login card with a soft black shadow */
+.admin-card {
+    -fx-background-color: #1C2541; 
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 25, 0, 0, 12);
+    -fx-background-radius: 12;
+    -fx-padding: 50;
+}
+
+/* Typography */
+.admin-title {
+    -fx-text-fill: #E5B80B; /* Academy Gold */
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+
+.admin-subtitle {
+    -fx-text-fill: #A0AAB2;
+    -fx-font-size: 15px;
+}
+
+.admin-field-label {
+    -fx-text-fill: #E5B80B; /* Academy Gold */
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+}
+
+/* Dark input boxes that highlight gold when clicked */
+.admin-text-field {
+    -fx-background-color: #0B132B;
+    -fx-control-inner-background: #0B132B; /* Forces the inside to stay dark */
+    -fx-text-fill: white;                  /* Forces the TYPED text to be white! */
+    -fx-prompt-text-fill: #5C6B89;         /* Keeps the placeholder text a nice muted blue/gray */
+    -fx-border-color: #3A506B;
+    -fx-border-width: 2px;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 12;
+}
+
+/* Ensure it stays dark even when you hover your mouse over it */
+.admin-text-field:hover {
+    -fx-background-color: #121A33; 
+    -fx-control-inner-background: #121A33;
+}
+
+/* Glows gold and stays dark when you click inside to type */
+.admin-text-field:focused {
+    -fx-background-color: #0B132B;
+    -fx-control-inner-background: #0B132B;
+    -fx-border-color: #E5B80B;
+}
+
+/* The Sign-In Button */
+.admin-login-btn {
+    -fx-background-color: #E5B80B;
+    -fx-text-fill: #0B132B; /* Dark text on gold button */
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-background-radius: 6;
+    -fx-padding: 14;
+    -fx-cursor: hand;
+}
+
+.admin-login-btn:hover {
+    -fx-background-color: #F4C430; /* Lighter gold on hover */
+}
+
+/* The Back Link */
+.admin-link-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #A0AAB2;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+}
+
+.admin-link-btn:hover {
+    -fx-text-fill: #E5B80B;
+    -fx-underline: true;
 }
 
 /* Back — text button */
@@ -206,6 +279,81 @@
 .back-btn:hover {
     -fx-text-fill: #1a2744;
     -fx-background-color: rgba(26,39,68,0.06);
+}
+
+/* ==========================================================================
+   ADMIN DASHBOARD: SIDEBAR & TABLES
+   ========================================================================== */
+
+/* The Sidebar */
+.admin-sidebar {
+    -fx-background-color: #070D1F; /* Extra dark navy */
+    -fx-padding: 20 10 20 10;
+}
+
+.admin-sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #A0AAB2;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 20;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.admin-sidebar-btn:hover {
+    -fx-background-color: #1C2541;
+    -fx-text-fill: #E5B80B; /* Academy Gold */
+    -fx-background-radius: 6;
+}
+
+/* Stat Cards */
+.admin-stat-card {
+    -fx-background-color: #1C2541;
+    -fx-background-radius: 8;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 5);
+}
+/* High Contrast Stat Cards */
+.admin-stat-title { 
+    -fx-text-fill: #E5B80B; /* Force Academy Gold */
+    -fx-font-size: 14px; 
+    -fx-font-weight: bold;
+}
+.admin-stat-value { 
+    -fx-text-fill: #FFFFFF; /* Force Pure White */
+    -fx-font-size: 36px; 
+    -fx-font-weight: bold; 
+}
+/* The Dark Mode TableView */
+.admin-table {
+    -fx-background-color: transparent;
+    -fx-border-color: #3A506B;
+    -fx-border-radius: 6;
+}
+.admin-table .column-header-background {
+    -fx-background-color: #1C2541;
+}
+.admin-table .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: #0B132B;
+    -fx-border-width: 0 1 1 0;
+}
+.admin-table .column-header .label {
+    -fx-text-fill: #E5B80B;
+    -fx-font-weight: bold;
+}
+.admin-table .table-row-cell {
+    -fx-background-color: #0B132B;
+}
+.admin-table .table-row-cell:odd {
+    -fx-background-color: #0E162B; /* Slight zebra striping */
+}
+.admin-table .table-row-cell:selected {
+    -fx-background-color: #3A506B;
+}
+.admin-table .table-cell {
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
 }
 
 /* Inline link (e.g., "Create an account") */
@@ -324,6 +472,8 @@
    COURSE CARDS (TILE PANE)
    ------------------------------------------------ */
 .course-card {
+    -fx-min-width: 420;
+    -fx-max-width: 420;
     -fx-background-color: #ffffff;
     -fx-background-radius: 16;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 12, 0, 0, 4);
@@ -403,4 +553,4 @@
 .course-btn:hover {
     -fx-background-color: #0b1a30;
     -fx-text-fill: #ffffff;
-}}
+}
