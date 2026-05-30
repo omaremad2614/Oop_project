@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="550.0" prefWidth="950.0" spacing="20.0" style="-fx-background-color: #070D1F; -fx-border-color: #3A506B; -fx-border-width: 2;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StudentDetailsController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+    <children>
+        <Label styleClass="admin-title" text="Student Academic Profile" />
+
+        <HBox spacing="15.0">
+            <VBox styleClass="admin-stat-card" minWidth="220.0" prefWidth="220.0">
+                <Label styleClass="admin-stat-title" text="STUDENT ID" />
+                <Label fx:id="idLabel" styleClass="admin-stat-value" text="---" />
+            </VBox>
+            <VBox styleClass="admin-stat-card" minWidth="300.0" prefWidth="350.0" HBox.hgrow="ALWAYS">
+                <Label styleClass="admin-stat-title" text="FULL NAME" />
+                <Label fx:id="nameLabel" styleClass="admin-stat-value" text="---" />
+            </VBox>
+            <VBox styleClass="admin-stat-card" minWidth="120.0" prefWidth="120.0">
+                <Label styleClass="admin-stat-title" text="TERM" />
+                <Label fx:id="termLabel" styleClass="admin-stat-value" text="---" />
+            </VBox>
+            <VBox styleClass="admin-stat-card" minWidth="180.0" prefWidth="180.0">
+                <Label styleClass="admin-stat-title" text="CUMULATIVE GPA" />
+                <Label fx:id="gpaLabel" styleClass="admin-stat-value" text="---" />
+            </VBox>
+        </HBox>
+
+        <Label style="-fx-text-fill: #E5B80B; -fx-font-weight: bold; -fx-font-size: 14px;" text="Course Schedule &amp; Total Marks" />
+
+        <TableView fx:id="courseTable" styleClass="admin-table" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colCode" prefWidth="100.0" text="COURSE" />
+                <TableColumn fx:id="colName" prefWidth="250.0" text="COURSE NAME" />
+                <TableColumn fx:id="colCredits" prefWidth="120.0" text="CREDIT HOURS" />
+                <TableColumn fx:id="colTotal" prefWidth="120.0" text="TOTAL MARKS" />
+            </columns>
+        </TableView>
+
+        <Button maxWidth="Infinity" onAction="#handleClose" style="-fx-background-color: transparent; -fx-text-fill: #A0AAB2; -fx-border-color: #3A506B; -fx-border-radius: 6; -fx-padding: 10; -fx-cursor: hand;" text="Close Profile" />
+    </children>
+</VBox>

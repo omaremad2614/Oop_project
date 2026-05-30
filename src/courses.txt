@@ -1,0 +1,8 @@
+MATH 101|Mathematics I|Calculus, limits, derivatives and integrals for engineering students.|3|Mon / Wed / Fri – 09:00 – 10:00|Dr. Aisha Kamal|40|39|∑
+PHYS 102|Physics II|Electricity, magnetism, and wave mechanics.|4|Tue / Thu – 10:00 – 12:00|Dr. Ahmed Tariq|40|30|⚡
+MECH 103|Statics|Equilibrium of structures, free body diagrams, trusses and frames.|3|Mon / Wed – 13:00 – 14:30|Dr. Hana Mostafa|30|19|⊞
+ENGR 104|Engineering Drawing|Technical drawing, orthographic projection, and CAD fundamentals.|2|Sun / Tue – 10:00 – 11:00|Eng. Youssef Nour|25|20|✎
+CCE 105|Data Structure|Arrays, stacks, queues, and linked lists|4|Mon / Thu - 9:00 - 11:00|Prof. Noha Seddik|30|28|💻
+CCE 106|Object Oriented Prog.|Classes, inheritance, polymorphism, and JavaFX.|3|Sun / Wed - 12:00 - 14:00|Dr. Sameh|40|32|☕
+DM 101|Discrete Math|bla bla bla eyad 3azim |3|Mon / Wed|Dr. Dalia Sobhy|40|4|📚
+CA 2026|Computer Architecture|bla bla bla |3|Sun / Tue|Dr. Farida Osman|30|2|📚

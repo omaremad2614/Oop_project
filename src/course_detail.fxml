@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<!--
+    course_detail.fxml
+    Shown when the student clicks "Register →" on a dashboard card.
+    The controller (CourseDetailController) receives the Course object
+    and populates every fx:id label before the scene appears.
+-->
+<VBox prefWidth="700.0" prefHeight="600.0"
+      styleClass="dash-root"
+      stylesheets="@style.css"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="CourseDetailController">
+
+    <!-- ── TOP NAVBAR (matches dashboard) ──────────────────────────── -->
+    <HBox alignment="CENTER_LEFT" prefHeight="64" styleClass="dash-navbar">
+        <padding><Insets bottom="0" left="32" right="32" top="0"/></padding>
+        <children>
+            <StackPane alignment="CENTER">
+                <children>
+                    <Circle radius="18" styleClass="nav-crest-circle"/>
+                    <Label styleClass="nav-crest-letter" text="M"/>
+                </children>
+                <HBox.margin><Insets right="12"/></HBox.margin>
+            </StackPane>
+            <Label styleClass="nav-uni-name" text="Arab Academy"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox alignment="CENTER" spacing="10" styleClass="nav-user-badge">
+                <padding><Insets bottom="8" left="16" right="16" top="8"/></padding>
+                <children>
+                    <Label styleClass="nav-user-label" text="Student Portal"/>
+                </children>
+            </HBox>
+        </children>
+    </HBox>
+
+    <!-- ── BACK BUTTON ─────────────────────────────────────────────── -->
+    <HBox>
+        <padding><Insets bottom="0" left="36" right="36" top="20"/></padding>
+        <children>
+            <Button fx:id="backBtn"
+                    text="← Back to Courses"
+                    styleClass="back-btn"
+                    onAction="#handleBack"/>
+        </children>
+    </HBox>
+
+    <!-- ── COURSE HEADER CARD ──────────────────────────────────────── -->
+    <VBox spacing="0" styleClass="course-card">
+        <VBox.margin><Insets bottom="0" left="48" right="48" top="16"/></VBox.margin>
+
+        <!-- Blue header stripe -->
+        <HBox alignment="CENTER_LEFT" spacing="16" styleClass="course-card-header">
+            <padding><Insets bottom="22" left="24" right="24" top="22"/></padding>
+            <children>
+                <StackPane prefHeight="52" prefWidth="52" styleClass="course-icon-bg">
+                    <children>
+                        <Label fx:id="iconLabel" styleClass="course-icon-label" text="∑"/>
+                    </children>
+                </StackPane>
+                <VBox spacing="4">
+                    <children>
+                        <Label fx:id="codeLabel"  styleClass="course-code" text="MATH 101"/>
+                        <Label fx:id="nameLabel"  styleClass="course-name" text="Mathematics I"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+
+        <!-- White body -->
+        <VBox styleClass="course-card-body" spacing="20">
+            <padding><Insets bottom="28" left="24" right="24" top="20"/></padding>
+            <children>
+
+                <!-- Description -->
+                <Label fx:id="descLabel"
+                       styleClass="course-desc"
+                       text="Course description."
+                       wrapText="true"/>
+
+                <!-- Details grid -->
+                <VBox spacing="12">
+                    <children>
+
+                        <!-- Credit hours -->
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <children>
+                                <Label text="Credit Hours"   styleClass="field-label" prefWidth="150"/>
+                                <Label fx:id="hoursLabel"   styleClass="course-meta" text="3"/>
+                            </children>
+                        </HBox>
+
+                        <!-- Schedule -->
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <children>
+                                <Label text="Schedule"       styleClass="field-label" prefWidth="150"/>
+                                <Label fx:id="scheduleLabel" styleClass="course-meta" text="Mon / Wed / Fri"/>
+                            </children>
+                        </HBox>
+
+                        <!-- Instructor -->
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <children>
+                                <Label text="Instructor"         styleClass="field-label" prefWidth="150"/>
+                                <Label fx:id="instructorLabel"   styleClass="course-meta" text="Dr. X"/>
+                            </children>
+                        </HBox>
+
+                        <!-- Capacity -->
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <children>
+                                <Label text="Enrolled / Capacity" styleClass="field-label" prefWidth="150"/>
+                                <Label fx:id="capacityLabel"      styleClass="course-meta" text="32 / 40"/>
+                            </children>
+                        </HBox>
+
+                        <!-- Available seats -->
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <children>
+                                <Label text="Available Seats"  styleClass="field-label" prefWidth="150"/>
+                                <Label fx:id="seatsLabel"      styleClass="course-meta" text="8 seats open"/>
+                            </children>
+                        </HBox>
+
+                    </children>
+                </VBox>
+
+                <!-- Feedback message (success / error) -->
+                <Label fx:id="messageLabel"
+                       styleClass="message-label"
+                       text=""
+                       wrapText="true"
+                       maxWidth="Infinity"/>
+
+                <!-- Register button -->
+                <HBox alignment="CENTER_RIGHT">
+                    <children>
+                        <Button fx:id="registerBtn"
+                                styleClass="login-btn"
+                                text="Register for this Course"
+                                onAction="#handleRegister"
+                                prefWidth="260"/>
+                    </children>
+                </HBox>
+
+            </children>
+        </VBox>
+    </VBox>
+
+</VBox>

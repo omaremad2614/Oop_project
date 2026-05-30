@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefWidth="400.0" spacing="12.0" styleClass="admin-card" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddCourseController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+    <children>
+        <Label styleClass="admin-title" text="Add New Course" />
+        <Label styleClass="admin-subtitle" text="Fill out the course details below." />
+
+        <TextField fx:id="codeField" promptText="Course Code (e.g., CS 101)" styleClass="admin-text-field" />
+        <TextField fx:id="nameField" promptText="Course Name" styleClass="admin-text-field" />
+        <TextField fx:id="descField" promptText="Short Description" styleClass="admin-text-field" />
+        <TextField fx:id="creditsField" promptText="Credit Hours (Number)" styleClass="admin-text-field" />
+        <TextField fx:id="scheduleField" promptText="Schedule (e.g., Mon / Wed)" styleClass="admin-text-field" />
+        <TextField fx:id="instructorField" promptText="Instructor Name" styleClass="admin-text-field" />
+        <TextField fx:id="capacityField" promptText="Max Student Capacity (Number)" styleClass="admin-text-field" />
+
+        <Label fx:id="messageLabel" styleClass="message-label" text="" wrapText="true" />
+
+        <Button maxWidth="Infinity" onAction="#handleSaveCourse" styleClass="admin-login-btn" text="SAVE COURSE" />
+        <Button maxWidth="Infinity" onAction="#handleCancel" styleClass="admin-link-btn" text="Cancel" />
+    </children>
+</VBox>
